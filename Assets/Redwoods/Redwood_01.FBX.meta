@@ -3,7 +3,25 @@ guid: 46b9d82a71df7514e91aba6c55ca140b
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Billboard_01
+    second: {fileID: 7927721403643479459, guid: a7cc90b8d6282684c9fb567e8a5ee218,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Redwood_04
+    second: {fileID: -3952272722086182790, guid: 81a782a1f08e7be448a6371ef8eb2851,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Redwood_Leaf_01
+    second: {fileID: -8693876624240514488, guid: a7cc90b8d6282684c9fb567e8a5ee218,
+      type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
