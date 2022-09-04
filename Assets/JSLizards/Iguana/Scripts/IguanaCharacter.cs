@@ -28,8 +28,11 @@ public class IguanaCharacter : MonoBehaviour {
 		iguanaAnimator.SetTrigger("Rebirth");
 	}
 
+	\\ public void Jump()
+	//{
+	//	iguanaAnimator.SetTrigger("Jump");
+	//}
 
-	
 	public void Move(float v,float h){
 		iguanaAnimator.SetFloat ("Forward", v);
 		iguanaAnimator.SetFloat ("Turn", h);
