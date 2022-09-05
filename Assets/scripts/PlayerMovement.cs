@@ -8,7 +8,10 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     public Vector3 forceAdded = new Vector3(0, 5, 0);
     public bool isOnGround = true;
+    public float sprintMultiplier;
 
+    private bool sprint;
+    private float horizontal, vertical;
 
 
     void Start()
@@ -19,8 +22,17 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal") * Time.deltaTime;
-        float vertical = Input.GetAxis("Vertical") * Time.deltaTime;
+        sprint = Input.GetKey(KeyCode.LeftShift);
+        if (sprint)
+        {
+            horizontal = Input.GetAxis("Horizontal") * Time.deltaTime * sprintMultiplier;
+            vertical = Input.GetAxis("Vertical") * Time.deltaTime;
+        }
+        else
+        {
+            horizontal = Input.GetAxis("Horizontal") * Time.deltaTime;
+            vertical = Input.GetAxis("Vertical") * Time.deltaTime;
+        }
 
         transform.Translate(horizontal, 0, vertical);
 
