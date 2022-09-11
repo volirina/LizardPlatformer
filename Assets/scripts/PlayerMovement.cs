@@ -12,11 +12,13 @@ public class PlayerMovement : MonoBehaviour
 
     private bool sprint;
     private float horizontal, vertical;
+    Animator iguanaAnimator; //new added be Iryna
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        iguanaAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -38,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetButtonDown("Jump") && isOnGround)
         {
+            iguanaAnimator.SetTrigger("Hit"); //new added by Iryna
             rb.AddForce(forceAdded, ForceMode.Impulse); //applies instant force
             isOnGround = false;
         }
