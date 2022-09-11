@@ -2,7 +2,14 @@
 using System.Collections;
 
 public class IguanaCharacter : MonoBehaviour {
-	Animator iguanaAnimator;
+	public static IguanaCharacter instance;
+
+    public void Awake()
+    {
+		instance = this;
+    }
+
+    Animator iguanaAnimator;
 	
 	void Start () {
 		iguanaAnimator = GetComponent<Animator> ();
@@ -33,4 +40,5 @@ public class IguanaCharacter : MonoBehaviour {
 		iguanaAnimator.SetFloat ("Forward", v);
 		iguanaAnimator.SetFloat ("Turn", h);
 	}
+
 }

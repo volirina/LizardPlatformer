@@ -51,8 +51,12 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator RespownCoroutine()
     {
+        UIController.instance.FadeToBlack();
+        IguanaCharacter.instance.Death();
+        yield return new WaitForSeconds(3);
+
+
         player.gameObject.SetActive(false);
-        //UIController.instance.FadeToBlack();
         yield return new WaitForSeconds(waitBeforeRespawning);
 
         player.transform.position = respawnPoint;

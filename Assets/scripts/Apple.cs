@@ -8,8 +8,10 @@ public class Apple : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            
             LevelManager.instance.GetApple();
             Destroy(gameObject);
+            
         }
     }
 }

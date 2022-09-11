@@ -11429,7 +11429,7 @@ MonoBehaviour:
   fadeScreenDeath: {fileID: 1263130007}
   isFadingToBlack: 0
   isFadingToTransparent: 0
-  fadeSpeed: 0
+  fadeSpeed: 0.4
 --- !u!1 &2040957397
 GameObject:
   m_ObjectHideFlags: 0
