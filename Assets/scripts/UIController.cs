@@ -15,7 +15,10 @@ public class UIController : MonoBehaviour
 
     public Slider healthSlider;
     public TMP_Text healthText, appleText;
+    public Image fadeScreenDeath;
+    public bool isFadingToBlack, isFadingToTransparent;
 
+    public float fadeSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +28,26 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(isFadingToBlack)
+        {
+            fadeScreenDeath.color = new Color(fadeScreenDeath.color.r, fadeScreenDeath.color.g, fadeScreenDeath.color.b, Mathf.MoveTowards(fadeScreenDeath.color.a, 1f, fadeSpeed * Time.deltaTime));
+        }
+        if (isFadingToTransparent)
+        {
+            fadeScreenDeath.color = new Color(fadeScreenDeath.color.r, fadeScreenDeath.color.g, fadeScreenDeath.color.b, Mathf.MoveTowards(fadeScreenDeath.color.a, 0f, fadeSpeed * Time.deltaTime));
+        }
+    }
+    public void FadeToBlack()
+    {
+        isFadingToBlack = true;
+        isFadingToTransparent = false;
     }
 
+    public void FadeToTransparent()
+    {
+        isFadingToTransparent = true;
+        isFadingToBlack = false;
+    }
     public void UpdateHealthDisplay(int health)
     {
         healthText.text = "HEALTH: " + health + "/" + PlayerHealthController.instance.maxHealth;
