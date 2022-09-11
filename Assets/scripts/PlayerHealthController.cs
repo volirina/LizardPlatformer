@@ -64,9 +64,8 @@ public class PlayerHealthController : MonoBehaviour
 
             if (currentHealth <= 0)
             {
-                
-
                 LevelManager.instance.Respawn();
+               
             }
 
             UIController.instance.UpdateHealthDisplay(currentHealth);

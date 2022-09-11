@@ -11,6 +11,13 @@ public class DamagePlayer : MonoBehaviour
         birdAnimator = GetComponent<Animator>();
     }
 
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    birdAnimator.SetBool("isDead", true);
+    //    PlayerHealthController.instance.FillHealth();
+    //    Destroy(this);
+    //}
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -19,4 +26,5 @@ public class DamagePlayer : MonoBehaviour
             PlayerHealthController.instance.DamagePlayer();
         }
     }
+
 }

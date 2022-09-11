@@ -64,6 +64,10 @@ public class LevelManager : MonoBehaviour
         //gameCamera.SnapToTarget();
 
         player.gameObject.SetActive(true);
+        currentApples = 0; //change apples to 0 after death
+        PlayerHealthController.instance.FillHealth();   //if dead respawn with 2 full life
+        UIController.instance.appleText.text = currentApples.ToString(); //update UI
+
 
         respawning = false;
         UIController.instance.FadeToTransparent();
