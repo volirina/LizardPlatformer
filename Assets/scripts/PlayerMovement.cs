@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 forceAdded = new Vector3(0, 5, 0);
     public bool isOnGround = true;
     public float sprintMultiplier;
+    public float turnSpeed = 45f;
 
     private bool sprint;
     private float horizontal, vertical;
@@ -25,18 +26,18 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         sprint = Input.GetKey(KeyCode.LeftShift);
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
+
         if (sprint)
         {
-            horizontal = Input.GetAxis("Horizontal") * Time.deltaTime * sprintMultiplier;
-            vertical = Input.GetAxis("Vertical") * Time.deltaTime;
+            transform.Translate(Vector3.forward * Time.deltaTime * speed * vertical * sprintMultiplier);
         }
         else
         {
-            horizontal = Input.GetAxis("Horizontal") * Time.deltaTime;
-            vertical = Input.GetAxis("Vertical") * Time.deltaTime;
+            transform.Translate(Vector3.forward * Time.deltaTime * speed * vertical);
         }
-
-        transform.Translate(horizontal, 0, vertical);
+        transform.Rotate(Vector3.up, turnSpeed * horizontal * Time.deltaTime);
 
         if(Input.GetButtonDown("Jump") && isOnGround)
         {
