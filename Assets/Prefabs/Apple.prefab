@@ -60,6 +60,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09f80fbd83f8049368ed6d17e3af3723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  appleSound: {fileID: 5507290534835515509, guid: 37d220ae7321b44ea9beb84eed61a287,
+    type: 3}
 --- !u!1001 &161520272515950741
 PrefabInstance:
   m_ObjectHideFlags: 0
