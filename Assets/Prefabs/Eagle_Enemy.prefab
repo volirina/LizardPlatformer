@@ -830,7 +830,6 @@ GameObject:
   - component: {fileID: 4544794090179011027}
   - component: {fileID: 4485734192410154070}
   - component: {fileID: 4485734192410154067}
-  - component: {fileID: 4350636734143631}
   m_Layer: 0
   m_Name: Eagle_Enemy
   m_TagString: Untagged
@@ -886,8 +885,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.19380812, y: 0.15503821, z: 0.17843531}
-  m_Center: {x: 0.004682829, y: 0.5907717, z: -0.031816177}
+  m_Size: {x: 0.19380811, y: 0.15503828, z: 0.20973596}
+  m_Center: {x: 0.004682829, y: 0.5907717, z: -0.016165853}
 --- !u!114 &4485734192410154067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -900,21 +899,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c73a5850f605f400da60eb45296ec257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killSound: {fileID: 6470803340611395235, guid: ee3e6ca7223f44d74b568d49fa0e4818,
-    type: 3}
---- !u!65 &4350636734143631
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4487320271191254561}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.20630412, y: 0.010754268, z: 0.37897658}
-  m_Center: {x: -0.014411549, y: 0.66087735, z: -0.037255764}
 --- !u!1 &4487355289130157697
 GameObject:
   m_ObjectHideFlags: 0
