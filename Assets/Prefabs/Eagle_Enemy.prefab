@@ -899,6 +899,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c73a5850f605f400da60eb45296ec257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  birdKillSFX: {fileID: 12537471616356431, guid: 5b2e09a3f112d45358d4165c32283e96,
+    type: 3}
 --- !u!1 &4487355289130157697
 GameObject:
   m_ObjectHideFlags: 0

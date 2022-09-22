@@ -6,6 +6,8 @@ public class DamagePlayer : MonoBehaviour
 {
 
     Animator birdAnimator;
+    public AudioSource birdKillSFX;
+
     public void Start()
     {
         birdAnimator = GetComponent<Animator>();
@@ -23,6 +25,7 @@ public class DamagePlayer : MonoBehaviour
         if(other.tag == "Player")
         {
             birdAnimator.SetTrigger("Leave");
+            birdKillSFX.Play();
             PlayerHealthController.instance.DamagePlayer();
         }
     }

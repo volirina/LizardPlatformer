@@ -344,6 +344,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6048cb10c858749db96fa7eb6e68ffd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointSFX: {fileID: 6891689199141966192, guid: c4ccdcdf392dc40c6969f465ac82fdfe,
+    type: 3}
 --- !u!1 &9086322716220143323
 GameObject:
   m_ObjectHideFlags: 0

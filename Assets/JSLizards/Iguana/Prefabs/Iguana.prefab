@@ -1315,6 +1315,7 @@ GameObject:
   m_Component:
   - component: {fileID: 476318}
   - component: {fileID: 4279183207608066859}
+  - component: {fileID: 8036141395084998839}
   - component: {fileID: 9540064}
   - component: {fileID: 5405928}
   - component: {fileID: 13662094}
@@ -1360,6 +1361,23 @@ MonoBehaviour:
   rb: {fileID: 0}
   forceAdded: {x: 0, y: 5, z: 0}
   isOnGround: 1
+  sprintMultiplier: 0
+  turnSpeed: 45
+--- !u!114 &8036141395084998839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e095fcb76e1443c5ac5ff88a9cbd5ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  killFallDistance: 0
+  playerRigidbody: {fileID: 5405928}
+  FallingThreshold: -10
 --- !u!95 &9540064
 Animator:
   serializedVersion: 4
