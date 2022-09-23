@@ -5,9 +5,15 @@ using UnityEngine;
 public class KillFallPlatform : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float killFallDistance;
     public Rigidbody playerRigidbody;
-    public float FallingThreshold = -10f;
+    public float ActivateFallingSpeed = -10f;
+    public float FatalFallingDistance = 1f;
+    public AudioSource birdKill;
+    public PlayerHealthController script;
+
+    public float fallDistance = 0f;
+    private float initialFallHeight;
+    public bool isDead = false;
 
     void Start()
     {
@@ -18,17 +24,26 @@ public class KillFallPlatform : MonoBehaviour
     void Update()
     {
         //check if the player is falling
-        if (playerRigidbody.velocity.y < FallingThreshold)
+        if (playerRigidbody.velocity.y < ActivateFallingSpeed)
         {
+            initialFallHeight = transform.position.y;
             Fall();
         }
 
     }
 
     void Fall()
-    {
+    {   
+        fallDistance += Mathf.Abs(transform.position.y);
         //if the player is falling for a distance bigger than killFallDistance
-            PlayerHealthController.instance.DamagePlayer();
+        if(fallDistance > FatalFallingDistance && isDead == false)
+            {
+                isDead = true;
+                birdKill.Play();
+                script.currentHealth = 0;
+                script.DamagePlayer();
+                
+            }
     }
 
 }

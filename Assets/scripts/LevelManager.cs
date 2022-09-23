@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
+    public GameObject iguana;
 
     private void Awake()
     {
@@ -41,7 +42,7 @@ public class LevelManager : MonoBehaviour
 
      public void Respawn()
     {
-        if(!respawning)
+        if (!respawning)
         {
             respawning = true;
             StartCoroutine(RespownCoroutine());
@@ -54,6 +55,7 @@ public class LevelManager : MonoBehaviour
         UIController.instance.FadeToBlack();
         IguanaCharacter.instance.Death();
         yield return new WaitForSeconds(3);
+        iguana.GetComponent<KillFallPlatform>().isDead = false;
 
 
         player.gameObject.SetActive(false);
