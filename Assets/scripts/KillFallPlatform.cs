@@ -9,7 +9,7 @@ public class KillFallPlatform : MonoBehaviour
     public float ActivateFallingSpeed = -10f;
     public float FatalFallingDistance = 1f;
     public AudioSource birdKill;
-    public PlayerHealthController script;
+    //public PlayerHealthController script; //changed by Iryna
 
     public float fallDistance = 0f;
     private float initialFallHeight;
@@ -40,10 +40,10 @@ public class KillFallPlatform : MonoBehaviour
             {
                 isDead = true;
                 birdKill.Play();
-                script.currentHealth = 0;
-                script.DamagePlayer();
-                
-            }
+            //script.currentHealth = 0; //changed by Iryna
+            //script.DamagePlayer(); //changed by Iryna
+            PlayerHealthController.instance.FallPlayer(); //created the function to handle the death in PlayerHealthController Instance
+        }
     }
 
 }

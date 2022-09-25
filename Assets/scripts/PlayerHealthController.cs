@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class PlayerHealthController : MonoBehaviour
 {
-    public int currentHealth;
+   
     public static PlayerHealthController instance;
-    public KillFallPlatform killScript;
+    //public KillFallPlatform killScript;
 
     private void Awake()
     {
         instance = this;
     }
+    public int currentHealth;
     public int maxHealth;
 
     public float invincibilityLength = 1f;
@@ -65,7 +66,7 @@ public class PlayerHealthController : MonoBehaviour
             if (currentHealth <= 0)
             {
                 LevelManager.instance.Respawn();
-                killScript.isDead = false;
+                //killScript.isDead = false;
 
             }
 
@@ -74,6 +75,22 @@ public class PlayerHealthController : MonoBehaviour
 
 
     }
+
+    public void FallPlayer()
+    {
+        if(currentHealth == 1)
+        {
+            currentHealth -= 1;
+        }
+        else
+        {
+            currentHealth -= 2;
+        }
+        UIController.instance.UpdateHealthDisplay(currentHealth);
+        LevelManager.instance.Respawn();
+    }
+
+
 
     public void FillHealth()
     {
