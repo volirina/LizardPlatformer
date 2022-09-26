@@ -7,6 +7,8 @@ public class DamagePlayer : MonoBehaviour
 
     Animator birdAnimator;
     public AudioSource birdKillSFX;
+    public GameObject effect;
+    public Transform effectPoint;
 
     public void Start()
     {
@@ -27,6 +29,10 @@ public class DamagePlayer : MonoBehaviour
             birdAnimator.SetTrigger("Leave");
             birdKillSFX.Play();
             PlayerHealthController.instance.DamagePlayer();
+            if (effect != null)
+            {
+                Instantiate(effect, effectPoint.position, Quaternion.identity);
+            }
         }
     }
 

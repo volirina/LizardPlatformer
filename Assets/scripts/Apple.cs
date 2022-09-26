@@ -6,6 +6,9 @@ public class Apple : MonoBehaviour
 {
     public AudioSource appleEatSFX;
 
+    public GameObject effect;
+    public Transform effectPoint;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -13,7 +16,11 @@ public class Apple : MonoBehaviour
             appleEatSFX.Play();
             LevelManager.instance.GetApple();
             Destroy(gameObject);
-            
+            if (effect != null)
+            {
+                Instantiate(effect, effectPoint.position, Quaternion.identity);
+            }
+
         }
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class KillFallPlatform : MonoBehaviour
 {
+    public GameObject effect;
+    public Transform effectPoint;
     // Start is called before the first frame update
     public Rigidbody playerRigidbody;
     public float ActivateFallingSpeed = -10f;
@@ -43,6 +45,10 @@ public class KillFallPlatform : MonoBehaviour
             //script.currentHealth = 0; //changed by Iryna
             //script.DamagePlayer(); //changed by Iryna
             PlayerHealthController.instance.FallPlayer(); //created the function to handle the death in PlayerHealthController Instance
+            if (effect != null)
+            {
+                Instantiate(effect, effectPoint.position, Quaternion.identity);
+            }
         }
     }
 
