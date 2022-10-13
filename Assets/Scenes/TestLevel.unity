@@ -11006,7 +11006,7 @@ PrefabInstance:
     - target: {fileID: 4279183207608066859, guid: b4806bcfd71324778b360c0299195b34,
         type: 3}
       propertyPath: forceAdded.y
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4279183207608066859, guid: b4806bcfd71324778b360c0299195b34,
         type: 3}
